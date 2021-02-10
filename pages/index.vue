@@ -146,13 +146,14 @@
 </template>
 
 <script>
-import axios from 'axios';
+// import axios from 'axios';
 import _ from 'lodash';
-import chats from "~/static/data/chats.json";
+// import chats from "~/static/data/chats.json";
 import users from "~/static/data/users.json";
 export default {
-		data() {
-				return {
+
+	data() {
+		return {
 			creatingServer: false,
 			findConversationOpen: false,
 			showMembers: false,
@@ -160,24 +161,11 @@ export default {
 			query:'',
 			gategoryBtnHover: false,
 			users: users,
-				};
-		},
-
-	// asyncData({ params, error }) {
-	// 	return axios
-	// 	.get(`https://raw.githubusercontent.com/SOKHUONG/discord-clone/master/static/data/app.json`)
-	// 	.then(res => {
-	// 		return {
-	// 			servers: res.data.servers,
-	// 			users: res.data.users
-	// 		}
-	// 	})
-	// 	.catch(e => {
-	// 		error({ statusCode: 404, message: 'Post not found' })
-	// 	})
-	// },
+		};
+	},
 
 	methods: {
+
 		deleteQuery(){
 			this.query = '';
 		},
@@ -193,11 +181,11 @@ export default {
 				'/ /  /_/  /  \\__  \\/ /  /  \\',
 				'\\/_______/\\/______/\\/__/\\___\\',
 			].join( '\n' ) );
-					console.log("%c💝 I am really appreciate that you interested in my code 😊", "background: transparent; color: #ed0e90; font-size: 30px; font-weight: 600; font-family: Lobster, serif; height: 200px");
+			console.log("%c💝 I am really appreciate that you interested in my code 😊", "background: transparent; color: #ed0e90; font-size: 30px; font-weight: 600; font-family: Lobster, serif; height: 200px");
 			console.log(`%c Source code of this project on github: %c${link}`,"font-family: Lobster, serif;color: #0eed98; font-size: 25px","font-size: 15px;");
 		}
 	},
-		mounted() {
+	mounted() {
 		if(!sessionStorage.getItem('logged')){
 			// _.once(this.Log) will return a funtion, so just call it directly.
 			_.once(this.Log)();
@@ -206,7 +194,7 @@ export default {
 
 		window.onunload = function () {
 			sessionStorage.removeItem('logged');
-			}
 		}
+	}
 };
 </script>
